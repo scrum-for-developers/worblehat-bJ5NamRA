@@ -33,6 +33,9 @@
 			<action dev="betaworblers" type="update">
 				WB-126, Show Application version number in all Pages.
 			</action>
+			<action dev="betaworblers" type="update">
+				WB-111, Description for books
+			</action>
 		</release>
 	</body>
 </document>
