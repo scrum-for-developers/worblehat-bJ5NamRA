@@ -1,27 +1,61 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org"><head>
 <title>Add Book - Worblehat Bookmanager</title>
+
+	<style>
+		.label {
+			float: left;
+			width: 80px;
+		}
+		.input {
+			width: 100px;
+			float: left;
+		}
+		.marginTop {
+			margin-top: 10px;
+		}
+		textarea {
+			clear: both;
+			width: 300px;
+		}
+	</style>
+
 </head>
 <body>
 	<h1>Add Book</h1>
 
 	<form th:object="${bookDataFormData}" method="POST">
-			Title:<input type="text" th:field="*{title}" />
+			<div class="label">Title:</div>
+			<div>
+				<input type="text" th:field="*{title}"  />
+			</div>
 		<span class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
 		<br />
-			Edition:<input type="text" th:field="*{edition}" />
+			<div class="label">Edition:</div>
+			<div>
+				<input type="text" th:field="*{edition}" />
+			</div>
 		<span class="error" th:if="${#fields.hasErrors('edition')}" th:errors="*{edition}"></span>
 		<br />
-			ISBN:<input type="text" th:field="*{isbn}" />
+			<div class="label">ISBN:</div>
+			<div>
+				<input type="text" th:field="*{isbn}" />
+			</div>
 		<span class="error" th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></span>
 		<br />
-			Author:<input type="text" th:field="*{author}" />
+			<div class="label">Author:</div>
+			<div>
+				<input type="text" th:field="*{author}" />
+			</div>
 		<span class="error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
 		<br />
-			Year:<input type="text" th:field="*{yearOfPublication}" />
+			<div class="label">Year:</div>
+			<input type="text" th:field="*{yearOfPublication}" />
 		<span class="error" th:if="${#fields.hasErrors('yearOfPublication')}" th:errors="*{yearOfPublication}"></span>
 		<br />
-		Description:<textarea th:field="*{description}" />
+			<div class="label">Description:</div>
+		<br />
+		<textarea th:field="*{description}" rows="8" />
 		<br />
 		<input type="submit" id="addBook" value="Add Book" />
 		<hr/>
