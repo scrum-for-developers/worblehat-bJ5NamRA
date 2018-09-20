@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.5.RELEASE</version>
+        <version>2.0.5.RELEASE</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
 
@@ -117,7 +117,7 @@
             <dependency>
                 <groupId>javax.validation</groupId>
                 <artifactId>validation-api</artifactId>
-                <version>1.1.0.Final</version>
+                <version>2.0.1.Final</version>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
@@ -127,7 +127,7 @@
             <dependency>
                 <groupId>commons-validator</groupId>
                 <artifactId>commons-validator</artifactId>
-                <version>1.4.1</version>
+                <version>1.6</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-collections</groupId>
