@@ -29,5 +29,6 @@
 	</table>
 	<hr />
 	<a th:href="@{/}">Back to Home</a>
+	<h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
 </body>
 </html>
