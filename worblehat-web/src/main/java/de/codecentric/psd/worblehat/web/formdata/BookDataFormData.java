@@ -10,70 +10,81 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 public class BookDataFormData {
 
-	@NotEmpty(message = "{empty.bookDataFormData.title}")
-	private String title;
+    @NotEmpty(message = "{empty.bookDataFormData.title}")
+    private String title;
 
-	@NotEmpty(message = "{empty.bookDataFormData.edition}")
-	@Numeric(message = "{notvalid.bookDataFormData.edition}")
-	private String edition;
+    @NotEmpty(message = "{empty.bookDataFormData.edition}")
+    @Numeric(message = "{notvalid.bookDataFormData.edition}")
+    private String edition;
 
-	@NotEmpty(message = "{empty.bookDataFormData.yearOfPublication}")
-	@Numeric(message = "{notvalid.bookDataFormData.yearOfPublication}")
-	@Length(message = "{invalid.length.bookDataFormData.yearOfPublication}", min = 4, max = 4)
-	private String yearOfPublication;
+    @NotEmpty(message = "{empty.bookDataFormData.yearOfPublication}")
+    @Numeric(message = "{notvalid.bookDataFormData.yearOfPublication}")
+    @Length(message = "{invalid.length.bookDataFormData.yearOfPublication}", min = 4, max = 4)
+    private String yearOfPublication;
 
-	@NotEmpty(message = "{empty.bookDataFormData.isbn}")
-	@ISBN(message = "{notvalid.bookDataFormData.isbn}")
-	private String isbn;
+    @NotEmpty(message = "{empty.bookDataFormData.isbn}")
+    @ISBN(message = "{notvalid.bookDataFormData.isbn}")
+    private String isbn;
 
-	@NotEmpty(message = "{empty.bookDataFormData.author}")
-	private String author;
+    @NotEmpty(message = "{empty.bookDataFormData.author}")
+    private String author;
 
-	public String getYearOfPublication() {
-		return yearOfPublication;
-	}
+    @NotEmpty(message = "{empty.bookDataFormData.description}")
+    private String description;
 
-	public void setYearOfPublication(String yearOfPublication) {
-		this.yearOfPublication = yearOfPublication;
-	}
+    public String getYearOfPublication() {
+        return yearOfPublication;
+    }
 
-	public String getIsbn() {
-		return isbn;
-	}
+    public void setYearOfPublication(String yearOfPublication) {
+        this.yearOfPublication = yearOfPublication;
+    }
 
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
+    public String getIsbn() {
+        return isbn;
+    }
 
-	public String getAuthor() {
-		return author;
-	}
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
 
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+    public String getAuthor() {
+        return author;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public String getEdition() {
-		return edition;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setEdition(String edition) {
-		this.edition = edition;
-	}
+    public String getEdition() {
+        return edition;
+    }
 
-	@Override
-	public String toString() {
-		return "BookDataFormData [title=" + title + ", edition=" + edition
-				+ ", yearOfPublication=" + yearOfPublication + ", isbn=" + isbn + ", author=" + author
-				+ "]";
-	}
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "BookDataFormData [title=" + title + ", edition=" + edition
+                + ", yearOfPublication=" + yearOfPublication + ", isbn=" + isbn + ", author=" + author
+                + "]";
+    }
 
 }
