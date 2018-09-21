@@ -1,0 +1,27 @@
+table.table-worblehat {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    border-collapse: collapse;
+}
+table.table-worblehat td, table.table-worblehat th {
+    border: 0px solid #FFFFFF;
+    padding: 10px 10px;
+}
+table.table-worblehat tbody td {
+    font-size: 14px;
+}
+table.table-worblehat tr:nth-child(even) {
+    background: #EEEEEE;
+}
+table.table-worblehat thead {
+    background: #3F51B5;
+}
+table.table-worblehat thead th {
+    font-size: 17px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+}
+table.table-worblehat tfoot td {
+    font-size: 14px;
+}

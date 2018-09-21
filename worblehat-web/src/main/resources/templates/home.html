@@ -1,16 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<title>Worblehat Bookmanager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Worblehat Bookmanager</title>
 </head>
 <body>
-<h1 id="welcome_heading"><span th:text="${@environment.getProperty('spring.application.name')}"></span></h1>
-<ul>
-    <li><a th:href="@{/bookList}">Show all Books</a></li>
-    <li><a th:href="@{/insertBooks}">Add a new book</a></li>
-    <li><a th:href="@{/borrow}">Borrow Book</a></li>
-    <li><a th:href="@{/returnAllBooks}">Return all Books</a></li>
-</ul>
-<h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
+<div class="home">
+    <h1 id="welcome_heading"><span th:text="${@environment.getProperty('spring.application.name')}"></span></h1>
+    <ul>
+        <li><a th:href="@{/bookList}">Show all Books</a></li>
+        <li><a th:href="@{/insertBooks}">Add a new book</a></li>
+        <li><a th:href="@{/borrow}">Borrow Book</a></li>
+        <li><a th:href="@{/returnAllBooks}">Return all Books</a></li>
+    </ul>
+    <h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
+</div>
 </body>
 </html>
