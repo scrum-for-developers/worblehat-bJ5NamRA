@@ -16,3 +16,4 @@ Examples:
 | isbn       | author           | title     |edition    | year  | message               |
 | 0XXXXXXXX5 | Terry Pratchett  | Sourcery  | 1         | 1989  | Please insert a valid 10 digit ISBN Number. Example: 0123456789 |
 | 0552131075 | Terry Pratchett  | Sourcery  | X         | 1989  | Please insert a valid edition number. Example: 7  |
+| 0552131075 | Terry Pratchett  | Sourcery  | X         | 1989  | Please insert a valid edition number. Example: 7  |
