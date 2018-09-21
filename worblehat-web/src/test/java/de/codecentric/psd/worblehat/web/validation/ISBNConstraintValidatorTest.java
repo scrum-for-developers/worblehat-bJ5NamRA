@@ -45,4 +45,16 @@ public class ISBNConstraintValidatorTest {
         assertFalse(actual);
     }
 
+    @Test
+    public void shouldReturnTrueIfISBNStartWithBlank() throws Exception {
+        boolean actual = isbnConstraintValidator.isValid("    0123456789", constraintValidatorContext);
+        assertTrue(actual);
+    }
+
+    @Test
+    public void shouldReturnTrueIfISBNEndsWithBlank() throws Exception {
+        boolean actual = isbnConstraintValidator.isValid("0123456789      ", constraintValidatorContext);
+        assertTrue(actual);
+    }
+
 }
