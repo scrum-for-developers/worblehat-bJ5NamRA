@@ -21,7 +21,7 @@ Examples:
 | 0552131075 | Terry Pratchett  | Sourcery  | 1         | 1989  | Terry Pratchett  | Sourcery |    2   |
 | 0552131075 | Terry Pratchett  | Sourcery  | 1         | 1989  | Jerry Pratchett  | Sourcery |    1   |
 | 0552131075 | Terry Pratchett  | Sourcery  | 1         | 1989  | Terry Pratchett  | Mastery  |    1   |
-
+| 9781413304541 | Terry Pratchett  | Sourcery  | 1         | 1989  | Terry Pratchett  | Mastery  |    1   |
 
 
 
