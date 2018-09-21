@@ -26,42 +26,46 @@ import java.util.Set;
 @Controller
 public class BorrowBookController {
 
-	private BookService bookService;
+    private BookService bookService;
 
-	@Autowired
-	public BorrowBookController(BookService bookService) {
-		this.bookService= bookService;
-	}
+    @Autowired
+    public BorrowBookController(BookService bookService) {
+        this.bookService = bookService;
+    }
 
-	@RequestMapping(method = RequestMethod.GET)
-	public void setupForm(final ModelMap model) {
-		model.put("borrowFormData", new BookBorrowFormData());
-	}
+    @RequestMapping(method = RequestMethod.GET)
+    public void setupForm(final ModelMap model) {
+        model.put("borrowFormData", new BookBorrowFormData());
+    }
 
-	@Transactional
-	@RequestMapping(method = RequestMethod.POST)
-	public String processSubmit(@ModelAttribute("borrowFormData") @Valid BookBorrowFormData borrowFormData,
-			BindingResult result) {
-		if (result.hasErrors()) {
-			return "borrow";
-		}
-		Set<Book> books = bookService.findBooksByIsbn(borrowFormData.getIsbn());
-		if(books.isEmpty()) {
-			result.rejectValue("isbn", "noBookExists");
-			return "borrow";
-		}
-		Optional<Borrowing> borrowing = bookService.borrowBook(borrowFormData.getIsbn(), borrowFormData.getEmail());
+    @Transactional
+    @RequestMapping(method = RequestMethod.POST)
+    public String processSubmit(@ModelAttribute("borrowFormData") @Valid BookBorrowFormData borrowFormData,
+                                BindingResult result) {
+        if (result.hasErrors()) {
+            return "borrow";
+        }
+        String isbn = borrowFormData.getIsbn();
+        if (isbn != null && (isbn.startsWith(" ") || isbn.endsWith(" "))) {
+            isbn = isbn.replaceAll(" ", "");
+        }
+        Set<Book> books = bookService.findBooksByIsbn(isbn);
+        if (books.isEmpty()) {
+            result.rejectValue("isbn", "noBookExists");
+            return "borrow";
+        }
+        Optional<Borrowing> borrowing = bookService.borrowBook(isbn, borrowFormData.getEmail());
 
-		return borrowing
-				.map(b -> "home")
-				.orElseGet( () -> {
-					result.rejectValue("isbn", "noBorrowableBooks");
-					return "borrow";
-				});
-	}
+        return borrowing
+                .map(b -> "home")
+                .orElseGet(() -> {
+                    result.rejectValue("isbn", "noBorrowableBooks");
+                    return "borrow";
+                });
+    }
 
-	@ExceptionHandler(Exception.class)
-	public String handleErrors(Exception ex, HttpServletRequest request) {
-		return "home";
-	}
+    @ExceptionHandler(Exception.class)
+    public String handleErrors(Exception ex, HttpServletRequest request) {
+        return "home";
+    }
 }
