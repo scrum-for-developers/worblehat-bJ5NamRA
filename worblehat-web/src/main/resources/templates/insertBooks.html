@@ -1,67 +1,67 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org"><head>
-<title>Add Book - Worblehat Bookmanager</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Book - Worblehat Bookmanager</title>
 
-	<style>
-		.label {
-			float: left;
-			width: 80px;
-		}
-		.input {
-			width: 100px;
-			float: left;
-		}
-		.marginTop {
-			margin-top: 10px;
-		}
-		textarea {
-			clear: both;
-			width: 300px;
-		}
-	</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/insertBooks.css">
+    <link rel="stylesheet" type="text/css" href="css/inputs.css">
 
+    <link rel="stylesheet" th:href="@{../static/css/main.css}"/>
 </head>
 <body>
-	<h1>Add Book</h1>
+<div class="insertBooks">
+    <h1>Add Book</h1>
 
-	<form th:object="${bookDataFormData}" method="POST">
-			<div class="label">Title:</div>
-			<div>
-				<input type="text" th:field="*{title}"  />
-			</div>
-		<span class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
-		<br />
-			<div class="label">Edition:</div>
-			<div>
-				<input type="text" th:field="*{edition}" />
-			</div>
-		<span class="error" th:if="${#fields.hasErrors('edition')}" th:errors="*{edition}"></span>
-		<br />
-			<div class="label">ISBN:</div>
-			<div>
-				<input type="text" th:field="*{isbn}" />
-			</div>
-		<span class="error" th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></span>
-		<br />
-			<div class="label">Author:</div>
-			<div>
-				<input type="text" th:field="*{author}" />
-			</div>
-		<span class="error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
-		<br />
-			<div class="label">Year:</div>
-			<input type="text" th:field="*{yearOfPublication}" />
-		<span class="error" th:if="${#fields.hasErrors('yearOfPublication')}" th:errors="*{yearOfPublication}"></span>
-		<br />
-			<div class="label">Description:</div>
-		<br />
-		<textarea th:field="*{description}" rows="8" maxlength="4000" />
-		<br />
-		<input type="submit" id="addBook" value="Add Book" />
-		<hr/>
-		<a th:href="@{/}">Back to Home</a>
-	</form>
-	<h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
-
+    <form th:object="${bookDataFormData}" method="POST">
+        <div class="label">Title:</div>
+        <input type="text" th:field="*{title}"/>
+        <div class="error-message">
+            <span class="error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+        </div>
+        <br/>
+        <div class="label">Edition:</div>
+        <div>
+            <input type="text" th:field="*{edition}"/>
+        </div>
+        <div class="error-message">
+            <span class="error" th:if="${#fields.hasErrors('edition')}" th:errors="*{edition}"></span>
+        </div>
+        <br/>
+        <div class="label">ISBN:</div>
+        <div>
+            <input type="text" th:field="*{isbn}"/>
+        </div>
+        <div class="error-message">
+            <span class="error" th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></span>
+        </div>
+        <br/>
+        <div class="label">Author:</div>
+        <div>
+            <input type="text" th:field="*{author}"/>
+        </div>
+        <div class="error-message">
+            <span class="error" th:if="${#fields.hasErrors('author')}" th:errors="*{author}"></span>
+        </div>
+        <br/>
+        <div class="label">Year:</div>
+        <input type="text" th:field="*{yearOfPublication}"/>
+        <div class="error-message">
+                <span class="error" th:if="${#fields.hasErrors('yearOfPublication')}"
+                      th:errors="*{yearOfPublication}"></span>
+        </div>
+        <br/>
+        <br/>
+        <div class="label">Description:</div>
+        <textarea th:field="*{description}" rows="8" maxlength="4000"/>
+        <br/>
+        <input type="submit" id="addBook" value="Add Book"/>
+        <hr/>
+        <a th:href="@{/}">Back to Home</a>
+    </form>
+    <h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
+</div>
 </body>
 </html>

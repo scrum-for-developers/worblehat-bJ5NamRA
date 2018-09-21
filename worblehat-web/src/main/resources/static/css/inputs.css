@@ -1,0 +1,35 @@
+input[type="text"],
+textarea {
+    background: white;
+    padding: 10px;
+    transition: all 200ms linear;
+    width: auto;
+    min-width: 300px;
+    font-size: 14px;
+    border: 1px solid #dddddd;
+}
+
+input[type="text"]:focus,
+input[type="text"]:hover,
+textarea:hover,
+textarea:focus {
+    outline: 0;
+    border: 1px solid #3F51B5;
+}
+
+input[type="submit"] {
+    border: 0;
+    background: #3F51B5;
+    padding: 10px;
+    min-width: 180px;
+    transition: all 200ms linear;
+    font-size: 14px;
+    color: white;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    opacity: .6;
+    outline: 0;
+    cursor: pointer;
+}

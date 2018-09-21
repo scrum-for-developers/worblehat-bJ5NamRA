@@ -1,35 +1,45 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Show all Books</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/tables.css">
+    <link rel="stylesheet" type="text/css" href="css/inputs.css">
+
+
+    <title>Show all Books</title>
 </head>
 <body>
-	<table class="bookList">
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Author</th>
-			<th>Year</th>
-			<th>Edition</th>
-			<th>ISBN</th>
-			<th>Desc</th>
-			<th>Borrower</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr th:each="book : ${books}">
-			<td th:text="${book.title}">Harry Potter</td>
-			<td th:text="${book.author}">J.K. Rowling</td>
-			<td th:text="${book.yearOfPublication}">2002</td>
-			<td th:text="${book.edition}">1st</td>
-			<td th:text="${book.isbn}">123456</td>
-			<td th:text="${book.description}">Desc</td>
-			<td th:text="${book?.borrowing?.borrowerEmailAddress}">someone@codecentric.de</td>
-		</tr>
-	</tbody>
-	</table>
-	<hr />
-	<a th:href="@{/}">Back to Home</a>
-	<h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
+
+<h1>Book List</h1>
+
+<table class="table-worblehat bookList">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+        <th>Edition</th>
+        <th>ISBN</th>
+        <th>Description</th>
+        <th>Borrower</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.title}">Harry Potter</td>
+        <td th:text="${book.author}">J.K. Rowling</td>
+        <td th:text="${book.yearOfPublication}">2002</td>
+        <td th:text="${book.edition}">1st</td>
+        <td th:text="${book.isbn}">123456</td>
+        <td th:text="${book.description}">Desc</td>
+        <td th:text="${book?.borrowing?.borrowerEmailAddress}">someone@codecentric.de</td>
+    </tr>
+    </tbody>
+</table>
+<hr/>
+<a th:href="@{/}">Back to Home</a>
+<h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
 </body>
 </html>

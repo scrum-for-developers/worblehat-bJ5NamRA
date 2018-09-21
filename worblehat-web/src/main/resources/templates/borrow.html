@@ -1,23 +1,41 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Borrow book - Worblehat Bookmanager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <title>Borrow book - Worblehat Bookmanager</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/tables.css">
+    <link rel="stylesheet" type="text/css" href="css/inputs.css">
 </head>
 <body>
-	<h1>Borrow Book</h1>
+<div class="borrow">
+    <h1>Borrow Book</h1>
 
-	<form th:object="${borrowFormData}" method="POST">
-		ISBN:<input id="isbn" type="text" th:field="*{isbn}" />
-		<span id="isbn-error" th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></span>
-		<br />
-		Email:<input id="email" type="text" th:field="*{email}" />
-		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-		<br />
-		<input type="submit" id="borrowBook" value="Borrow Book" />
-		<hr />
-		<a th:href="@{/}">Back to Home</a>
-	</form>
-	<h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
+    <form th:object="${borrowFormData}" method="POST">
 
+        <div class="label">ISBN:</div>
+        <div>
+            <input id="isbn" type="text" th:field="*{isbn}"/>
+        </div>
+        <div class="error-message">
+            <span id="isbn-error" th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></span>
+        </div>
+        <div class="label">Email:</div>
+        <div>
+            <input id="email" type="text" th:field="*{email}"/>
+        </div>
+        <div class="error-message">
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+        <br/>
+        <br/>
+        <input type="submit" id="borrowBook" value="Borrow Book"/>
+        <hr/>
+        <a th:href="@{/}">Back to Home</a>
+    </form>
+    <h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
+</div>
 </body>
 </html>

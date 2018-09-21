@@ -1,0 +1,12 @@
+.label {
+    float: left;
+    width: 120px;
+}
+
+.marginTop {
+    margin-top: 10px;
+}
+
+textarea {
+    clear: both;
+}
