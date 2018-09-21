@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,500,700,900');
+
+html, body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    padding: 20px;
+}
+
+a {
+    color: #3F51B5;
+    transition: all 100ms linear;
+}
+
+a:visited, a:link, a:focus, a:hover {
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.error-message {
+    padding: 10px;
+    color: #ee0000;
+}
+

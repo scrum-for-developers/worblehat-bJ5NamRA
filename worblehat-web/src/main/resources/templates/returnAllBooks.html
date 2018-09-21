@@ -1,21 +1,29 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Return All Books - Worblehat Bookmanager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <title>Return All Books - Worblehat Bookmanager</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/tables.css">
+    <link rel="stylesheet" type="text/css" href="css/inputs.css">
 </head>
 <body>
-	<h1>Return all Books</h1>
+<div class="returnAllBooks">
+    <h1>Return all Books</h1>
 
-	<form th:object="${returnAllBookFormData}" method="POST">
-		 Email Address:<input id="emailAddress" type="text" th:field="*{emailAddress}" />
-		<span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"></span>
-		<br />
-		<input type="submit" id="returnAllBooks" value="Return All Books" />
+    <form th:object="${returnAllBookFormData}" method="POST">
+        Email Address:<input id="emailAddress" type="text" th:field="*{emailAddress}"/>
+        <span th:if="${#fields.hasErrors('emailAddress')}" th:errors="*{emailAddress}"></span>
+        <br/>
+        <input type="submit" id="returnAllBooks" value="Return All Books"/>
 
-	</form>
+    </form>
 
-	<hr />
-	<a th:href="@{/}">Back to Home</a>
-	<h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
+    <hr/>
+    <a th:href="@{/}">Back to Home</a>
+    <h3 id="app_version">Version: <span th:text="${@environment.getProperty('info.version')}"></span></h3>
+</div>
 </body>
 </html>
